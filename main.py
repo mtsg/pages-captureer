@@ -38,8 +38,14 @@ def capture(page):
     ))
 
 
-def process():
+def setup():
+    if not os.path.exists(FILE_DIR):
+        os.makedirs(FILE_DIR)
     time.sleep(SLEEP_SECONDS)
+
+
+def process():
+    setup()
     for num in range(PAGES):
         PAGE = num+1
         time.sleep(SLEEP_SECONDS)
